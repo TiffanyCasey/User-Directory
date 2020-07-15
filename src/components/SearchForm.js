@@ -1,12 +1,18 @@
 import React from "react";
 import "../index.css";
 
-function Results() {
+function Search() {
     return (
-      <div>
-        <h1>Search</h1>
-      </div>
-    );
-  }
+      <div className="Search">
+        <input
+          type="text"
+          placeholder="Search"
+          // value={this.state.searchName}
+          // name="searchName"
+          // onChange={this.handleInputChange}
+        />
+    </div>
+  );
+}
   
-  export default Results
+  export default Search
