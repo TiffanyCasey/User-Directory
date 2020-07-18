@@ -1,8 +1,13 @@
-import React from "react";
+import React, { Component } from "react";
 import "../index.css";
+import employees from "../employees.json";
 
+class Results extends Component {
+  state = {
+    employees
+  }
 
-function Results(props) {
+  render() {
   return (
     <div className="container">
       <table className="table">
@@ -24,12 +29,14 @@ function Results(props) {
         </thead>
 
         <tbody>
+        {this.state.employees.map(employee => (
           <tr>
-            <td> {props.first_name} </td> 
-            <td> {props.last_name} </td>
-            <td> {props.job_title} </td>
-            <td> {props.email} </td>
+            <td> {employee.first_name} </td> 
+            <td> {employee.last_name} </td>
+            <td> {employee.job_title} </td>
+            <td> {employee.email} </td>
           </tr>
+          ))}
         </tbody>
       </table>
 
@@ -38,6 +45,7 @@ function Results(props) {
 
     </div>
   );
+  };
 }
   
   export default Results;
