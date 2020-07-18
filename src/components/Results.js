@@ -9,22 +9,33 @@ function Results(props) {
         <thead>
           <tr>
             <th>
-              <strong id="col">First Name</strong> {props.first_name}
+              <strong id="col">First Name</strong> 
             </th>
             <th>
-              <strong id="col">Last Name</strong> {props.last_name}
+              <strong id="col">Last Name</strong> 
             </th>
             <th>
-              <strong id="col">Job Title</strong> {props.job_title}
+              <strong id="col">Job Title</strong> 
             </th>
             <th>
-              <strong id="col">Email Address</strong> {props.email}
+              <strong id="col">Email Address</strong> 
             </th>
           </tr>
         </thead>
+
+        <tbody>
+          <tr>
+            <td> {props.first_name} </td> 
+            <td> {props.last_name} </td>
+            <td> {props.job_title} </td>
+            <td> {props.email} </td>
+          </tr>
+        </tbody>
       </table>
-      <span onClick={() => props.removeFriend(props.id)} className="remove">
-      </span>
+
+      {/* <span onClick={() => props.sortEmployees(props.id)} className="sort">
+      </span> */}
+
     </div>
   );
 }

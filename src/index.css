@@ -2,6 +2,8 @@
   margin: 0;
 }
 
+/* HEADER COMPONENT  */
+
 header {
   text-align: center;
   margin: 0;
@@ -21,6 +23,8 @@ header {
   font-size: 20px;
 }
 
+/* SEARCH FORM COMPONENT  */
+
 input {
   margin: 50px;
   border: 2px solid rgb(218, 215, 215);
@@ -34,6 +38,8 @@ input {
   font-size: 20px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
 }
+
+/* RESULTS COMPONENT  */
 
 #col{
  font-size: 20px;

@@ -6,7 +6,7 @@ function Header() {
       <header>
         <h1 id="header">Employee Directory</h1>
        
-        <p id="headerBody">Search for an employee by entering their name or click on the name column to sort alphabetically. </p>
+        <p id="headerBody">Search for an employee by entering their name or click on the name column to sort alphabetically.</p>
       </header>
     );
   }
