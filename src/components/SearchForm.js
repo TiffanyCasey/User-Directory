@@ -1,7 +1,13 @@
-import React from "react";
+import React, { Component } from "react";
 import "../index.css";
 
-function Search(props) {
+class Search extends Component {
+
+  // handleInputChange () {
+  //   const [first_name] = useState('');
+  // }
+
+  render() {
   return (
     <div className="Search">
       <input
@@ -9,15 +15,13 @@ function Search(props) {
         placeholder="Search by name"
         name="search"
         className="Search"
-        value={props.search}
-        onChange={props.handleInputChange}
+        value={this.search}
+        onChange={this.handleInputChange}
         id="search"
       />
-      {/* <button onClick={props.handleFormSubmit} className="btn btn-primarymt-3">
-      Search
-      </button> */}
     </div>
   );
+  };
 }
   
-export default Search
+  export default Search
