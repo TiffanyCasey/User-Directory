@@ -7,6 +7,14 @@ class Results extends Component {
     employees
   }
 
+  sortName = (first_name) => {
+    this.setState( prevState => {
+      return {
+      employees: prevState.employees.sort(e => e.first_name === first_name)
+      }
+    });
+  }
+
   render() {
   return (
     <div className="container">
@@ -14,7 +22,7 @@ class Results extends Component {
         <thead>
           <tr>
             <th>
-              <strong id="col">First Name</strong> 
+              <strong id="col" onClick={this.sortName}>First Name</strong> 
             </th>
             <th>
               <strong id="col">Last Name</strong> 
@@ -39,10 +47,6 @@ class Results extends Component {
           ))}
         </tbody>
       </table>
-
-      {/* <span onClick={() => props.sortEmployees(props.id)} className="sort">
-      </span> */}
-
     </div>
   );
   };
