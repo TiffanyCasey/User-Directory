@@ -37,12 +37,12 @@ class Results extends Component {
         </thead>
 
         <tbody>
-        {this.state.employees.map(employee => (
-          <tr>
-            <td> {employee.first_name} </td> 
-            <td> {employee.last_name} </td>
-            <td> {employee.job_title} </td>
-            <td> {employee.email} </td>
+        {this.state.employees.map(emp => (
+          <tr key={emp.id}> 
+            <td> {emp.first_name} </td> 
+            <td> {emp.last_name} </td>
+            <td> {emp.job_title} </td>
+            <td> {emp.email} </td>
           </tr>
           ))}
         </tbody>
