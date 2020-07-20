@@ -1,12 +1,37 @@
 import React, { Component } from "react";
 import "../index.css";
+import Search from "../components/SearchForm";
 import employees from "../employees.json";
 
 class Results extends Component {
-  state = {
-    employees
-  }
 
+// FILTER
+  state = {
+    employees,
+    search: "",
+    result: [],
+    resultDisplay: [],
+  };
+
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    console.log("Input value", event.target.value);
+    console.log("employees", employees);
+
+    const userInput = event.target.value;
+    // this is not filtering through correctly 
+    const newArray = this.state.result.filter((emp)=>{
+      return emp.includes(userInput)
+    });
+    console.log("newarray", newArray);
+
+    this.setState({
+      resultDisplay: newArray,
+      search: userInput
+    })
+  };
+
+  // SORT BY FIRST NAME
   sortName = (first_name) => {
     this.setState( prevState => {
       return {
@@ -17,6 +42,9 @@ class Results extends Component {
 
   render() {
   return (
+  <>
+    <Search handler={this.handleInputChange} value={this.state.search} />
+  
     <div className="container">
       <table className="table">
         <thead>
@@ -48,6 +76,7 @@ class Results extends Component {
         </tbody>
       </table>
     </div>
+  </>
   );
   };
 }
