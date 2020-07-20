@@ -5,17 +5,22 @@ import employees from "../employees.json";
 class Search extends Component {
   // Setting the component's initial state
   state = {
-    employees
+    employees: [employees],
   };
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
-    const { name, value } = event.target;
-
-    // Updating the input's state
-    this.setState({
-      [name]: value
+    console.log("Input value", event.target.value);
+    console.log("employees", employees)
+    
+    const newArray = this.state.employees.filter((emp)=>{
+      return emp.indexOf(event.target.value) !== -1 
     });
+   
+    console.log("New array", newArray)
+    this.setState({
+      employees: [newArray],
+    })
   };
 
   render() {
@@ -24,9 +29,9 @@ class Search extends Component {
       <input
         type="text"
         placeholder="Search by name"
-        name="first_name"
+        name="employees"
         className="Search"
-        value={this.state.first_name}
+        value={this.state.input}
         onChange={this.handleInputChange}
         id="search"
       />
@@ -35,4 +40,4 @@ class Search extends Component {
   };
 }
   
-  export default Search
+export default Search
