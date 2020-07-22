@@ -1,7 +1,20 @@
-import React from "react";
+import React, { Component } from "react";
 import "../index.css";
 
-function Search(props) {
+class Search extends Component  {
+  
+state = {
+  searchTerm: ''
+}
+
+// Allows the input field to control the "searchTerm" value in the state
+editSearchTerm = (event) => {
+  this.setState({searchTerm: event.target.value})
+  console.log("INPUT:", event.target.value);
+  console.log("SEARCH TERM:", this.state.searchTerm);
+}
+
+render() {
   return (
     <div className="Search">
       <input
@@ -9,13 +22,13 @@ function Search(props) {
         placeholder="Search by name"
         name="search"
         className="Search"
-        value={props.value}
+        value={ this.state.value } // example had searchTerm in here - corresponds to line 34 on Results.JS  
         id="search"
-        onChange={props.handler}
-        
+        onChange={ this.editSearchTerm }
       />
     </div>
   );
+};
 };
 
 export default Search

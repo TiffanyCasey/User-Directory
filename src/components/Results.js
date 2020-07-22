@@ -1,37 +1,23 @@
 import React, { Component } from "react";
 import "../index.css";
 import Search from "../components/SearchForm";
+import Employees from "./Employees";
 import employees from "../employees.json";
+// import EmployeesContainer from "./EmployeesContainer";
 
 class Results extends Component {
 
-// FILTER
   state = {
-    employees,
-    search: "",
-    result: [],
-    resultDisplay: [],
+    employees, 
   };
 
-  handleInputChange = event => {
-    // Getting the value and name of the input which triggered the change
-    console.log("Input value", event.target.value);
-    console.log("employees", employees);
+  // Renders what shows up onto the page dynamically as letters are typed in the input field -- BREAKS APP WHEN RUN NOW. HAVE IT GREYED OUT BELOW
+  dynamicSearch = () => {
+    return this.props.employees.filter
+    (emp => emp.toLowerCase().includes(this.props.searchTerm.toLowerCase()))
+  }
 
-    const userInput = event.target.value;
-    // this is not filtering through correctly 
-    const newArray = this.state.result.filter((emp)=>{
-      return emp.includes(userInput)
-    });
-    console.log("newarray", newArray);
-
-    this.setState({
-      resultDisplay: newArray,
-      search: userInput
-    })
-  };
-
-  // SORT BY FIRST NAME
+  // Sorts by first name click - not working 
   sortName = (first_name) => {
     this.setState( prevState => {
       return {
@@ -42,41 +28,31 @@ class Results extends Component {
 
   render() {
   return (
-  <>
-    <Search handler={this.handleInputChange} value={this.state.search} />
-  
+  <div>
+    <Search />
     <div className="container">
-      <table className="table">
-        <thead>
-          <tr>
-            <th>
-              <strong id="col" onClick={this.sortName}>First Name</strong> 
-            </th>
-            <th>
-              <strong id="col">Last Name</strong> 
-            </th>
-            <th>
-              <strong id="col">Job Title</strong> 
-            </th>
-            <th>
-              <strong id="col">Email Address</strong> 
-            </th>
-          </tr>
-        </thead>
+        <table className="table">
+          <thead>
+              <tr>
+                  <th id="col">First Name</th>
+                  <th id="col">Last Name</th>
+                  <th id="col">Job Title</th>
+                  <th id="col">Email Address</th>
+              </tr>
+          </thead>
 
-        <tbody>
-        {this.state.employees.map(emp => (
-          <tr key={emp.id}> 
-            <td> {emp.first_name} </td> 
-            <td> {emp.last_name} </td>
-            <td> {emp.job_title} </td>
-            <td> {emp.email} </td>
-          </tr>
-          ))}
-        </tbody>
-      </table>
+            {this.state.employees.map( emp => 
+              <Employees
+                  key={emp.id}
+                  first_name={emp.first_name} 
+                  last_name={emp.last_name}
+                  job_title={emp.job_title}
+                  email={emp.email}
+              />
+            )}
+        </table>
     </div>
-  </>
+    </div>   
   );
   };
 }

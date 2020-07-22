@@ -41,18 +41,21 @@ input {
 
 /* RESULTS COMPONENT  */
 
-#col{
- font-size: 20px;
- text-align: center;
-}
-
 .table {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: rgb(13, 44, 113);
 }
 
-th {
-  text-align: center;
+#col{
+font-size: 25px;
+text-align: left;
+}
+
+
+#row {
+text-align: left;
+font-size: 18px;
+padding: 8px;
 }
 
 
