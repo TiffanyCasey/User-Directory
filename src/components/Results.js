@@ -20,11 +20,37 @@ class Results extends React.Component {
   render() {
     return (
   <div>
-    <BootstrapTable ref='table' data={ employees } multiColumnSort={ 2 }>
-        <TableHeaderColumn dataField='first_name' isKey={ true } dataSort={ true } >First Name</TableHeaderColumn>
-        <TableHeaderColumn dataField='last_name' dataSort={ true }>Last Name</TableHeaderColumn>
-        <TableHeaderColumn dataField='job_title' dataSort={ true }>Job Title</TableHeaderColumn>
-        <TableHeaderColumn dataField='email' dataSort={ true }>Email</TableHeaderColumn>
+    <BootstrapTable 
+      ref='table' 
+      data={ employees } 
+      multiColumnSort={ 2 }
+      search={ true }
+    >
+        <TableHeaderColumn 
+          dataField='first_name' 
+          isKey={ true } 
+          dataSort={ true } >
+          First Name
+        </TableHeaderColumn>
+
+        <TableHeaderColumn 
+          dataField='last_name' 
+          dataSort={ true }>
+          Last Name
+        </TableHeaderColumn>
+       
+        <TableHeaderColumn 
+          dataField='job_title' 
+          dataSort={ true }>
+          Job Title
+        </TableHeaderColumn>
+
+        <TableHeaderColumn 
+          dataField='email' 
+          dataSort={ true }>
+          Email
+        </TableHeaderColumn>
+    
     </BootstrapTable>
   </div>
   );
