@@ -25,19 +25,22 @@ header {
 
 /* SEARCH FORM COMPONENT  */
 
-input {
+.form-control {
+  width: 75%;
   margin: 50px;
   border: 2px solid rgb(218, 215, 215);
   color: grey;
-  padding: 12px;
+  padding: 25px !important;
   border-radius: 5px;
   text-align: left;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  font-size: 20px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+  font-size: 20px !important;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important; 
 }
+
+
 
 /* RESULTS COMPONENT  */
 
