@@ -1,6 +1,6 @@
 import React from "react";
 import "../index.css";
-import employees from "../employees.JSON";
+import employees from "./employees.json";
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
 let order = 'desc';
