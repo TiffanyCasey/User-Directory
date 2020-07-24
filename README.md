@@ -18,7 +18,7 @@ This app was created with the dependency react-bootstrap-table.
 
 ## Demonstration & output
 
-Deployed Site:
+Deployed Site: çhttps://employee-user-directory-react.herokuapp.com/
 
 Output:
 
